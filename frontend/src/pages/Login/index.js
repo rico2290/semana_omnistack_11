@@ -9,22 +9,25 @@ import './styles.css'
 import heroesImg from '../../assests/heroes.png'
 import logoImg from '../../assests/logo.svg'
 
+/* function initialState(){
+    return {id:'', password:''}
+} */
 
 
 export default function Login(){
     const [id, setId] = useState('')
+    const [password, setPassword] = useState('')
     const history = useHistory()
 
-/*     const clearInput = () => {
-        document.getElementById("usuarioId").reset(); 
-        this.setState('')
-      } */
+
 
     async function handleLogin(e){
         e.preventDefault()
         try {
             const response = await api.post('sessions', { id })
+            console.log({id, password})
             localStorage.setItem('ongId', id)
+            localStorage.setItem('ongPassword', password)
             localStorage.setItem('ongName', response.data.name)
             history.push('/profile')
   
@@ -45,6 +48,12 @@ export default function Login(){
                 value={id}
                 onChange={e=>setId(e.target.value)}>
                 </input>
+
+                <input placeholder="Password" id="usuarioPassword" type="password"
+                value={password}
+                onChange={e=>setPassword(e.target.value)}>
+                </input>
+
                 <button className="button" type="submit">Login</button>
                     
                 <Link className="back-link" to="cadastro"> 

@@ -21,7 +21,7 @@ export default function Profile(){
             }
         }).then( response =>{
             setIncidents(response.data)
-            console.log(response.data)
+            /* console.log(response.data) */
         })
     }, [ongId])
 
@@ -44,14 +44,14 @@ export default function Profile(){
         history.push('/')
     }
 
-    async function handleEditIncident(id){
+/*     async function handleEditIncident(id){
         try {
             
         } catch (error) {
             console.log('Erro ao editar inicidente')
         }
     }
-
+ */
 
     return( 
          <div className="profile-container">
@@ -68,7 +68,9 @@ export default function Profile(){
              </header>
 
              {/* Seção Casos */}
-             <h1>Casos cadastrados</h1>
+             <input placeholder="Pesquisar" id="pesquisar">
+             </input>
+             <h1>Meus Casos </h1>
              <ul>
                 {incidents.map(incident =>(
                     <li key={incident.id}>

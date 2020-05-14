@@ -22,6 +22,12 @@
      margin-top: 100px;
  }
 
+ .login-container section.form form input:first-of-type{
+    margin-bottom: 10px;
+    
+}
+
+
  .login-container section.form form h1{
      font-size: 32px;
      margin-bottom: 32px;

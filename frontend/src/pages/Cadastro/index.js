@@ -12,14 +12,16 @@ import logoImg from '../../assests/logo.svg'
 export default function Cadastro(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
     const [whatsapp, setWhatsapp] = useState('')
     const [city, setCity] = useState('')
     const [uf, setUf] = useState('')
+    
      const history = useHistory() //serve para fazer a navegação pra rota especifica
     async function handlerCadastro(e) {
         e.preventDefault()
         
-        const data = {name, email, whatsapp, city, uf }
+        const data = {name, email, password, whatsapp, city, uf }
         //console.log(data)
         try {
             const response  = await api.post('/ongs', data)
@@ -50,6 +52,10 @@ export default function Cadastro(){
 
                      <input type="email" placeholder="E-mail"
                      value={email} onChange={e=>setEmail(e.target.value)}>
+                     </input>
+
+                     <input type="password" placeholder="Password"
+                     value={password} onChange={e=>setPassword(e.target.value)}>
                      </input>
 
                      <input placeholder="Whatsapp"
