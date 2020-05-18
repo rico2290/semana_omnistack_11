@@ -13,6 +13,7 @@ export default function Cadastro(){
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirmPassword] = useState('')
     const [whatsapp, setWhatsapp] = useState('')
     const [city, setCity] = useState('')
     const [uf, setUf] = useState('')
@@ -58,6 +59,11 @@ export default function Cadastro(){
                      value={password} onChange={e=>setPassword(e.target.value)}>
                      </input>
 
+                     <input placeholder="Confirme password" id="usuarioPassword" type="password"
+                     value={confirmPassword}
+                     onChange={e=>setConfirmPassword(e.target.value)}>
+                     </input>
+
                      <input placeholder="Whatsapp"
                      value={whatsapp} onChange={e=>setWhatsapp(e.target.value)}>
                      </input>
@@ -67,7 +73,7 @@ export default function Cadastro(){
                      value={city} onChange={e=>setCity(e.target.value)}>                
                      </input>
                      <input placeholder="UF"
-                     value={uf} onChange={e=>setUf(e.target.value)}
+                     value={uf.toUpperCase()} onChange={e=>setUf(e.target.value)}
                      style={{ width: 70 }}>
                      </input>
                      </div>

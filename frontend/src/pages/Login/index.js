@@ -10,7 +10,7 @@ import heroesImg from '../../assests/heroes.png'
 import logoImg from '../../assests/logo.svg'
 
 /* function initialState(){
-    return {id:'', password:''}
+    return {id:'', password:'', confirmPassword:''}
 } */
 
 
@@ -53,6 +53,8 @@ export default function Login(){
                 value={password}
                 onChange={e=>setPassword(e.target.value)}>
                 </input>
+
+                
 
                 <button className="button" type="submit">Login</button>
                     
