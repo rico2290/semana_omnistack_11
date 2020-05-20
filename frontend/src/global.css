@@ -83,3 +83,53 @@ form textarea{
 .back-link:hover{
     opacity: 0.5;
 }
+
+/*FOOTER */
+footer {
+    clear: both;
+    background-color: #7159C1;
+    padding-bottom: 15px;
+    position: relative;
+    height: 100px;
+    font-family: hind, sans-serif;
+    ;
+    margin-top: -26px;
+
+}
+footer ul {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    list-style: none;
+    justify-content: center;
+    margin-bottom: 10px;
+    
+   
+}
+footer ul li { 
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+footer p {
+    display: flex;
+    justify-content: center;
+    /* padding-bottom: 10px; */
+    color:white;
+    
+}
+footer .copyright p:last-child {
+    font-size: small;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+span {
+    margin-left: 4px;
+    margin-right: 4px;
+}
+#heart {
+    color: #e02041;
+    font-size: 18px;
+    margin-top: -4px;
+}
+

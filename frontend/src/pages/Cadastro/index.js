@@ -1,6 +1,10 @@
 import React, {useState} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 import {FiArrowLeft} from 'react-icons/fi'
+import MaskedInput from 'react-text-mask'
+
+import Footer from '../../Footer'
+
 
 import api from '../../services/api.js'
 
@@ -18,12 +22,12 @@ export default function Cadastro(){
     const [city, setCity] = useState('')
     const [uf, setUf] = useState('')
     
-     const history = useHistory() //serve para fazer a navegação pra rota especifica
+    const history = useHistory() //serve para fazer a navegação pra rota especifica
     async function handlerCadastro(e) {
         e.preventDefault()
         
         const data = {name, email, password, whatsapp, city, uf }
-        //console.log(data)
+        /* console.log(data.whatsapp) */
         try {
             const response  = await api.post('/ongs', data)
             alert(`seu ID de acesso: ${response.data.id}` )
@@ -33,6 +37,7 @@ export default function Cadastro(){
         }
     }
     return(
+        <div>
          <div className="cadastro-container">
              <div className="content">
                  <section>
@@ -64,9 +69,17 @@ export default function Cadastro(){
                      onChange={e=>setConfirmPassword(e.target.value)}>
                      </input>
 
-                     <input placeholder="Whatsapp"
+                     {/* <input placeholder="Whatsapp"
                      value={whatsapp} onChange={e=>setWhatsapp(e.target.value)}>
-                     </input>
+                     </input> */}
+                     <MaskedInput
+                        mask={['(', /[1-9]/, /\d/, ')', ' ', /\d/, ' ', /\d/, /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/]}
+                        className="form-control"
+                        placeholder="(99) 99999-9999"
+                        guide={false}
+                        value={whatsapp} 
+                        onChange={e=>setWhatsapp(e.target.value)}>
+                    </MaskedInput>
 
                      <div className="input-group">
                      <input placeholder="Cidade"
@@ -81,6 +94,8 @@ export default function Cadastro(){
                      <button className="button" type="submit">Cadastrar</button>
                  </form>
              </div>
+         </div>
+         <Footer/>
          </div>
     )
 }

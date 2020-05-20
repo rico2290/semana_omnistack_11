@@ -43,6 +43,9 @@
     margin-top: 8px;
 }
 
+.cadastro-container .content form MaskedInput {
+    margin-top: 8px;
+}
 .cadastro-container .content form .input-group {
     display: flex;
 }

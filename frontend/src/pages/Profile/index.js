@@ -3,8 +3,10 @@ import { Link, useHistory } from 'react-router-dom'
 import { FiPower, FiTrash2, FiEdit } from 'react-icons/fi'
 import api from '../../services/api'
 
+import Footer from '../../Footer'
+
 import './styles.css'
-//import '../../global.css'
+
 
 import logoImg from '../../assests/logo.svg'
 
@@ -54,6 +56,7 @@ export default function Profile(){
  */
 
     return( 
+        <div>
          <div className="profile-container">
              <header>
                 <img src={ logoImg } alt="Be The Hero" ></img>
@@ -97,6 +100,8 @@ export default function Profile(){
                  )
                  }
              </ul>
+         </div>
+         <Footer/>
          </div>
     )
 }
